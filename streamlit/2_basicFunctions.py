@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import time
 
 st.title("Some Text Functions")
 st.subheader("Beginning text functions in streamlit")
@@ -89,5 +90,12 @@ texts = st.text_area(label="Describe your name")
 print(texts)
 
 date = st.date_input("Enter your birth date")
-time = st.time_input("Set timer")
+times = st.time_input("Set timer")
 
+######## Progress bars
+bar = st.progress(0)
+progress_status = st.empty()
+for i in range(10):
+    bar.progress((i+1)*10)
+    progress_status.write(str((i+1)*10) + "%")
+    time.sleep(1)
