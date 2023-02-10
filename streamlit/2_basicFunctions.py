@@ -42,3 +42,33 @@ st.audio("./data/audio.mp3")
 
 #video
 st.video("./data/video.mp4")
+
+##### INTERACTIVE ELEMENTS
+def callback():
+    print(st.session_state.checker)
+
+state = st.checkbox("Male", value=False, 
+                    on_change=callback,
+                    key='checker')
+if state:
+    st.write("Hi!")
+
+radio_btn = st.radio(label="What's your country?", 
+options = ("India", "Other")) 
+print(radio_btn)
+
+def btn_click():
+    print('button clicked')
+btn = st.button("Click me!", on_click=btn_click)
+
+#select boxes
+sb = st.selectbox("What is your favorite car?",
+options=("Audi", "Nano", "YEAHHH"))
+
+#multiselect
+ms = st.multiselect("Which courses are your favorite?",
+options=("Math", 'Computer Science', 'statistics', 'DS'))
+st.write(ms)
+
+
+#fileuploader
