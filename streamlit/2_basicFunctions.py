@@ -1,0 +1,44 @@
+import streamlit as st
+import pandas as pd
+
+st.title("Some Text Functions")
+st.subheader("Beginning text functions in streamlit")
+st.header("First heading")
+st.text("A simuation of <p> tag from html")
+st.markdown(" **HELLO YA'LL**")
+st.latex(r'\begin{pmatrix}1&2\\3&4\end{pmatrix}')
+json = {"Rahul":"amazing, beautiful, perfect",
+        "Lukas":"bitch, classy, gonna be rich"}
+
+st.json(json)
+code = """
+def newfunction() -> None:
+    print("text functions")
+"""
+st.code(code, language = 'python')
+
+#swiss army knife for all above text elements
+text= """
+The swiss knife of text functions is:
+```python
+streamlit.write()
+```
+"""
+st.write(text)
+st.metric(label="My speed", value='12m/s', delta = '-2m/s')
+
+#table
+table = pd.DataFrame({"Col 1": [1, 2, 34, 5, 6], "Col2": [3, 4, 5, 6, 8]})
+st.table(table)
+
+#dataframe
+st.dataframe(table)
+
+#image
+st.image("./data/image.jpeg", caption="My breakfast", width=500)
+
+#audio
+st.audio("./data/audio.mp3")
+
+#video
+st.video("./data/video.mp4")
