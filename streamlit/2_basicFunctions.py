@@ -70,5 +70,24 @@ ms = st.multiselect("Which courses are your favorite?",
 options=("Math", 'Computer Science', 'statistics', 'DS'))
 st.write(ms)
 
-
 #fileuploader
+st.title("Uploading files")
+st.markdown('---')
+images = st.file_uploader("Please upload a media",
+                 type=['png', 'jpg', 'jpeg', 'mp4'], 
+                 accept_multiple_files=True)
+if images is not None:
+    for image in images:
+        st.image(image)
+
+###### more interactive stuff
+value = st.slider("Choose age", min_value=10, max_value=90, value=18)
+print(value)
+
+val = st.text_input(label="Enter name")
+texts = st.text_area(label="Describe your name")
+print(texts)
+
+date = st.date_input("Enter your birth date")
+time = st.time_input("Set timer")
+
