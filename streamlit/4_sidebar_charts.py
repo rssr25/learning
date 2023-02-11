@@ -20,7 +20,7 @@ elif opt == "Bar":
     st.markdown("## Bar chart")
     fig = plt.figure()
     plt.style.use('https://github.com/dhaitz/matplotlib-stylesheets/raw/master/pitayasmoothie-light.mplstyle')
-    plt.bar(x, x*2)
+    plt.bar(bar_x, bar_x*10)
     st.write(fig)
 
 else:
